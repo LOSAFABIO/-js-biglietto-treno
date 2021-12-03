@@ -24,8 +24,8 @@ console.log(costKm)
 
 let userCost = (userKm * costKm);
 userCost = userCost.toFixed(2);
-console.log(userCost);
 
+/*
 let userDiscountLess18 = ([userKm * costKm] * 0.2);
 userDiscountLess18 = userDiscountLess18.toFixed(2);
 console.log(userDiscountLess18);
@@ -33,14 +33,22 @@ console.log(userDiscountLess18);
 let userDiscountMore65 = ([userKm * costKm] * 0.4);
 userDiscountMore65= userDiscountMore65.toFixed(2);
 console.log(userDiscountMore65);
+*/
 
+if ( userAge < 18 ){
+    document.writeln((userCost - ([userKm * costKm] * 0.2)).toFixed(2));
+    //In questa verione non posso vedere in console l'effettivo sconto ma solo il calcolo finale scontato.
+//L'altra versione al posto di ([userKm * costKm] * 0.2)) si mette userDiscountLess18 e possiamo vedere anche lo sconto applicato.
 
-if (userAge > 65){
-    document.writeln((userCost - userDiscountMore65).toFixed(2));
 } 
-else if (userAge < 18 ) { 
-    document.writeln((userCost - userDiscountLess18).toFixed(2));
+else if ( userAge > 65 ) { 
+    document.writeln((userCost - ([userKm * costKm] * 0.4)).toFixed(2));
+        //In questa verione non posso vedere in console l'effettivo sconto ma solo il calcolo finale scontato.
+//L'altra versione al posto di ([userKm * costKm] * 0.4)) si mette userDiscountMore e possiamo vedere anche lo sconto applicato.
+
 }
 else {  
     document.writeln(userCost);
 }
+
+console.log(userCost);
